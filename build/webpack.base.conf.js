@@ -4,6 +4,9 @@ const utils = require('./utils')
 const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
 var webpack = require("webpack")
+const APIHOST = process.env.APIHOST
+const SOCKETHOST = process.env.SOCKETHOST
+
 function resolve(dir) {
   return path.join(__dirname, '..', dir)
 }
@@ -46,7 +49,11 @@ module.exports = {
     new webpack.ProvidePlugin({
       $: "jquery",
       jQuery: "jquery"
-    })
+    }),
+    new webpack.DefinePlugin({
+      __APIHOST__: JSON.stringify(APIHOST),
+      __SOCKETHOST__: JSON.stringify(SOCKETHOST)
+    })    
   ],
   module: {
     rules: [{

@@ -7,12 +7,14 @@ import Layout from '../view/layout'
 // const HelloWorld = resolve => require(['../components/HelloWorld'], resolve);
 const HelloWorld = () => import('../components/HelloWorld').then(m => m.default);
 const demo = () => import('../view/demo').then(m => m.default);
-const echarts = () => import('../view/echarts').then(m => m.default);
-const dataTable = () => import('../view/demo/dataTable').then(m => m.default);
+const chartsDevice = () => import('../view/chartsDevice').then(m => m.default);
+const chartsOrder = () => import('../view/chartsOrder').then(m => m.default);
+const totalTable = () => import('../view/demo/totalTable').then(m => m.default);
 const lazyLoad = () => import('../view/demo/lazyLoad').then(m => m.default);
 const iconList = () => import('../components/icons').then(m => m.default);
 const form = () => import('../view/demo/form').then(m => m.default);
 const devPanel = () => import('../view/demo/develop').then(m => m.default);
+const chartsRender = () => import('../view/dataView/chartsRender').then(m => m.default);
 // const demo = resolve => require(['../view/demo'], resolve);
 
 Vue.use(Router)
@@ -34,7 +36,7 @@ export default new Router({
       // },
       children: [{
         path: '',
-        component: HelloWorld,
+        component: chartsDevice,
         // meta: {
         //     role: ['admin', 'developer', 'editor']
         // },
@@ -57,9 +59,9 @@ export default new Router({
         // },
       }]
     },
-    // echarts page
+    // chartsOrder
     {
-      path: '/echarts',
+      path: '/chartsOrder',
       component: Layout,
       name: '',
       hidden: true,
@@ -68,13 +70,47 @@ export default new Router({
       // },
       children: [{
         path: '',
-        component: echarts,
+        component: chartsOrder,
+        // meta: {
+        //     role: ['admin', 'developer', 'editor']
+        // },
+      }]
+    },    
+    // chartsRender 
+    {
+      path: '/chartsRender',
+      component: Layout,
+      name: '',
+      hidden: true,
+      // meta: {
+      //     role: ['admin,developer'],
+      // },
+      children: [{
+        path: '',
+        component: chartsRender,
+        // meta: {
+        //     role: ['admin', 'developer', 'editor']
+        // },
+      }]
+    },        
+    // chartsDevice page
+    {
+      path: '/chartsDevice',
+      component: Layout,
+      name: '',
+      hidden: true,
+      // meta: {
+      //     role: ['admin,developer'],
+      // },
+      children: [{
+        path: '',
+        component: chartsDevice,
         // meta: {
         //     role: ['admin', 'developer', 'editor']
         // },
       }]
     }, {
-      path: '/dataTable',
+      path: '/totalTable',
       component: Layout,
       name: '',
       hidden: true,
@@ -83,7 +119,7 @@ export default new Router({
       // },
       children: [{
         path: '',
-        component: dataTable,
+        component: totalTable,
         // meta: {
         //     role: ['admin', 'developer', 'editor']
         // },

@@ -3,8 +3,8 @@
     <transition name="move" mode="out-in">
       <router-view class="routerPanel"></router-view>
     </transition>
-    <div class="footer" style="width:100%;margin:0 auto;height:60px;z-index:8;background:#fff !important;color:#666;padding:auto;text-align:center;">
-      <div style="display:flex;align-self:flex-end;width:100%;height:100%;justify-content:center;align-items:center;">Copyright 2017-2028 </div>
+    <!-- <div class="footer" style="width:100%;margin:0 auto;height:60px;z-index:8;background:#fff !important;color:#666;padding:auto;text-align:center;">
+      <div style="display:flex;align-self:flex-end;width:100%;height:100%;justify-content:center;align-items:center;">Copyright 2017-2028 </div> -->
     </div>
   </div>
 </template>
@@ -46,7 +46,7 @@ export default {
 }
 
 .app-main {
-  background: #fafafa;
+  background: #fff;
   margin-left: 0px;
   margin-right: 0px;
   display: flex;
@@ -54,7 +54,6 @@ export default {
   align-content: space-between;
   transition: all .3s;
   height: 100%;
-
   .routerPanel {
     padding-top: 10px;
     flex: 1;

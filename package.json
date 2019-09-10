@@ -5,11 +5,44 @@
   "author": "李浩天 <li.haotian@z2a.com>",
   "private": true,
   "scripts": {
-    "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
+    "dev": "better-npm-run start-prd",
     "start": "npm run dev",
     "e2e": "node test/e2e/runner.js",
     "test": "npm run e2e",
-    "build": "node build/build.js"
+    "build-qa": "better-npm-run build-qa",
+    "build-prd": "better-npm-run build-prd"
+  },
+  "betterScripts": {
+    "start": {
+      "command": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
+      "env": {
+        "APIHOST": ""
+      }
+    },
+    "start-qa": {
+      "command": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
+      "env": {
+        "APIHOST": "http://192.168.30.145:8080"
+      }
+    },
+    "start-prd": {
+      "command": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
+      "env": {
+        "APIHOST": "https://bi.taojiji.work"
+      }
+    },        
+    "build-qa": {
+      "command": "node build/build.js",
+      "env": {
+        "APIHOST": "http://192.168.30.145:8080"
+      }
+    },
+    "build-prd": {
+      "command": "node build/build.js",
+      "env": {
+        "APIHOST": "https://bi.taojiji.work"
+      }
+    }
   },
   "dependencies": {
     "@mdi/font": "^3.6.95",
@@ -27,6 +60,7 @@
     "lodash": "^4.17.11",
     "material-design-icons-iconfont": "^5.0.1",
     "mockjs": "1.0.1-beta3",
+    "node-sass": "^4.12.0",
     "normalize.css": "3.0.2",
     "nprogress": "0.2.0",
     "relative": "^3.0.2",
@@ -68,11 +102,12 @@
     "file-loader": "^1.1.4",
     "friendly-errors-webpack-plugin": "^1.6.1",
     "html-webpack-plugin": "^2.30.1",
+    "better-npm-run": "^0.1.1",
     "jquery": "2 - 3",
     "moment": "2.24.0",
     "nightwatch": "^0.9.12",
     "node-notifier": "^5.1.2",
-    "node-sass": "4.7.2",
+    "node-sass": "^4.12.0",
     "optimize-css-assets-webpack-plugin": "^3.2.0",
     "ora": "^1.2.0",
     "portfinder": "^1.0.13",

@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <!-- <img src="./assets/logo.png"> -->
-    <img src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-300.png" :class='{"logoImg":true,"extends":mode=="extends","normal":mode=="normal"}'>
+    <!-- <img src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-300.png" :class='{"logoImg":true,"extends":mode=="extends","normal":mode=="normal"}'> -->
     <router-view></router-view>
   </div>
 </template>

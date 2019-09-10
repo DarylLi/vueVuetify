@@ -3,7 +3,10 @@ const user = {
   state: {
     admins: ['one', 'two', 'three', 'four'],
     crud: ['one', 'two', 'three', 'four'],
-    curUser: {}
+    curUser: {
+      username: 'giao',
+      name: 'giao'
+    }
   },
   mutations: {
     SET_USER(state, value) {

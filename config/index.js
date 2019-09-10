@@ -24,8 +24,8 @@ module.exports = {
     // poll: false, // https://webpack.js.org/configuration/dev-server/#devserver-watchoptions-
 
     proxyTable: {
-      '/cboard_war_exploded': {
-        target: 'http://localhost:8082',
+      '/cboard': {
+        target: 'http://bi.taojiji.work',
         // target: 'http://192.168.2.230:8088',
         // target: 'https://loan.z2a.com.cn',
         changeOrigin: true,

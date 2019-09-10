@@ -18,10 +18,10 @@ export function _axios(options, blocked = true) {
                 const res = response.data;
                 resolve(res);
                 // mApp.unblockPage();
-                store.commit('SET_PAGE_LOADED', true);
+                // store.commit('SET_PAGE_LOADED', true);
             })
             .catch(error => {
-                store.commit('SET_PAGE_LOADED', true);
+                // store.commit('SET_PAGE_LOADED', true);
                 // mApp.unblockPage();
                 // Message({
                 //     message: error.response.data,

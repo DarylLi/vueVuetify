@@ -1,7 +1,7 @@
 import { _axios } from './axios';
 import qs from 'qs';
 
-export function actionPostFormData(url, data) {
+export function actionPostFormData(url, data, responseType) {
     return _axios({
         // url: '/falcon/user/login.html',
         url,
@@ -9,7 +9,8 @@ export function actionPostFormData(url, data) {
         headers: {
             'Content-Type': 'application/json'
         },
-        data: data
+        data: data,
+        responseType: responseType
     })
 }
 export function actionPostJsonData(url, data) {

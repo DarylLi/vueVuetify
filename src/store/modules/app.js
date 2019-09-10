@@ -2,7 +2,7 @@ import Cookies from 'js-cookie';
 const app = {
   state: {
     mode: Cookies.get('mode') ? Cookies.get('mode') : 'normal',
-    sideShow: Cookies.get('sideShow') ? eval(Cookies.get('sideShow')) : true,
+    sideShow: Cookies.get('sideShow') ? eval(Cookies.get('sideShow')) : false,
     list_Active: Cookies.get('list_Active') ? Boolean(Cookies.get('list_Active')) : true,
     selected_Link: Cookies.get('selected_Link') ? Cookies.get('selected_Link') : [],
     selected_Nav: Cookies.get('selected_Nav') ? Cookies.get('selected_Nav') : "",

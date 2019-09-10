@@ -1,9 +1,9 @@
 <template>
   <div class="app-wrapper">
-    <div class="mainFrame">
+<!--     <div class="mainFrame">
       <sideBar :class='{"extends":mode=="extends","sideShow":sideShow==true}'></sideBar>
       <navBar></navBar>
-    </div>
+    </div> -->
     <blockedUI v-if='!pageLoaded'></blockedUI>
     <App-main v-if='curUser.name' :class='{"sideShow":sideShow==true}'></App-main>
     <!-- <div class="app-wrapper" :class="{hideSidebar:!sidebar.opened}"> -->

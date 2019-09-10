@@ -12,6 +12,9 @@ let localhostPath = curPath.substring(0, pos);
 let projectName = pathName.substring(0, pathName.substr(1).indexOf('/') + 1);
 // console.log(projectName)
 let url = env == "dev" ? proxName : projectName
+// protocal判定
+let protocolStr = document.location.protocol;
+console.log(protocolStr)
 
 export function getUserDetail(data) {
   return actionGet(url + '/commons/getUserDetail.do', data);
@@ -82,4 +85,17 @@ export function sqlDemo(data) {
   let now = new Date().getTime();
   return actionPostSingle('https://shence.taojiji.com/api/sql/query?token=80746d2e3dcffaeb59daade2d835c7d738e6fc727b861524b9b913b2a69ad53' + now, data);
 }
+export function dbDemo(data) {
+  return actionPostFormData(`${(__APIHOST__).replace('https:', protocolStr)}/cboard/dashboard/getAggregateData.do`, data);
+  // return actionPostFormData('http://localhost:8080/cboard_war_exploded/dashboard/getAggregateData.do', data);
+}
+export function exportExcel(data) {
+  return actionPostFormData(`${(__APIHOST__).replace('https:', protocolStr)}/cboard/dashboard/tableToxls.do`, data, 'arraybuffer');
+  // return actionPostFormData('http://localhost:8080/cboard_war_exploded/dashboard/getAggregateData.do', data);
+}
+export function channelList(data) {
+  return actionPostFormData(`${(__APIHOST__).replace('https:', protocolStr)}/cboard/dashboard/getDimensionValues.do`, data);
+  // return actionPostFormData('http://localhost:8080/cboard_war_exploded/dashboard/getAggregateData.do', data);
+}
+// 
 // commons/getUserDetail.do
