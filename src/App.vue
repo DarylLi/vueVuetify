@@ -12,9 +12,8 @@ export default {
   name: 'App',
   computed: {
     ...mapGetters(['admins', 'cruds', 'mode'])
-  },
+  }
 }
-
 </script>
 <style rel="stylesheet/scss" lang="scss">
 html,
@@ -22,6 +21,17 @@ body {
   height: 100%;
   margin-top: 0px;
   overflow: hidden!important;
+  ::-webkit-scrollbar{
+    width:6px;
+    height:6px;
+  }
+  ::-webkit-scrollbar-thumb{
+    background-color:#1e88e58a !important;
+    border-radius:20px;
+  }
+  ::-webkit-scrollbar-track{
+    background-color:#fff;
+  }
 }
 
 #app {

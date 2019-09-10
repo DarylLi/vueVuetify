@@ -15,6 +15,7 @@ const iconList = () => import('../components/icons').then(m => m.default);
 const form = () => import('../view/demo/form').then(m => m.default);
 const devPanel = () => import('../view/demo/develop').then(m => m.default);
 const chartsRender = () => import('../view/dataView/chartsRender').then(m => m.default);
+const coHort = () => import('../view/dataView/coHort').then(m => m.default);
 // const demo = resolve => require(['../view/demo'], resolve);
 
 Vue.use(Router)
@@ -88,6 +89,23 @@ export default new Router({
       children: [{
         path: '',
         component: chartsRender,
+        // meta: {
+        //     role: ['admin', 'developer', 'editor']
+        // },
+      }]
+    },    
+    // coHort    
+    {
+      path: '/coHort',
+      component: Layout,
+      name: '',
+      hidden: true,
+      // meta: {
+      //     role: ['admin,developer'],
+      // },
+      children: [{
+        path: '',
+        component: coHort,
         // meta: {
         //     role: ['admin', 'developer', 'editor']
         // },

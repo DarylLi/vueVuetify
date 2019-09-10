@@ -157,6 +157,8 @@ export default {
             value: `column_${e.index}`
           }
         })
+        // '设备首单客单价（限当日激活）'文案调整
+        this.headers[1].text = '设备首单客单价（限当日激活）'
         this.desserts = this.getData.data.map((e, i) => {
           let content = {}
           e.forEach((item, indx) => {
@@ -407,6 +409,8 @@ export default {
             value: `column_${e.index}`
           }
         })
+        // '设备首单客单价（限当日激活）'文案调整
+        this.headers[1].text = '设备首单客单价（限当日激活）'
         this.desserts = this.getData.data.map((e, i) => {
           let content = {}
           e.forEach((item, indx) => {
@@ -485,6 +489,8 @@ export default {
             value: `column_${e.index}`
           }
         })
+        // '设备首单客单价（限当日激活）'文案调整
+        this.headers[1].text = '设备首单客单价（限当日激活）'
         this.desserts = this.getData.data.map((e, i) => {
           let content = {}
           e.forEach((item, indx) => {
@@ -547,7 +553,7 @@ export default {
       }]
       let option = {
         title: {
-          text: idName == 'chartAlpha' ? '当日首单（限当日激活）':'当日客单价（限当日激活）',
+          text: idName == 'chartAlpha' ? '当日首单（限当日激活）':'设备首单客单价（限当日激活）',
           textStyle: {
             color : '#1e88e5',
             fontSize:16

@@ -9,31 +9,17 @@
     </v-btn>
     <v-data-table no-data-text='' :loading="dataLoaded" :headers="headers" :items="desserts" :pagination.sync
 ='paginationOp' :rows-per-page-items="[10,25]" class="elevation-1">
-    <template slot="headerCell" slot-scope="props">
-        <v-tooltip top>
-          <template v-slot:activator="{ on }">
-            <span v-on="on">
-              {{ props.header.text }}
-            </span>
-          </template>
-          <span>
-            {{ wordsTranslation(props.header.text)}}
-          </span>
-        </v-tooltip>
-      </template>
-<!--       <template v-slot:headers="props">
+      <!-- <template v-slot:headers="props">
+      <v-tooltip top>
+      <template v-slot:activator="{ on }">
         <tr>
-          <th v-for="header in props.headers" :key="header.text">
-            <v-tooltip top>
-              <template v-slot:activator="{ on }">
-                <span v-on="on">
-                  {{ header.text }}
-                </span>
-              </template>
-            <span>{{ wordsTranslation(header.text) }}</span>
-            </v-tooltip>
+          <th v-for="header in props.headers" :key="header.text"  v-on="on">
+            {{ header.text }}
           </th>
         </tr>
+      </template>
+      <span>Tooltip</span>
+      </v-tooltip>
       </template> -->
       <template v-slot:items="props">
         <!-- <td v-for='item in headers' :class="{'text-xs-left':true,'large_td':item.value=='column_0'}">{{ props.item[item.value] }}</td> -->
@@ -113,43 +99,6 @@ export default {
     //   })
   },
   methods: {
-    wordsTranslation(text) {
-      switch(text) {
-        case '当日激活设备':
-        return '当日激活的设备总数'
-
-        case '当日异常激活率':
-        return '当日异常激活设备数/激活设备总数'
-
-        case '当日注册设备数':
-        return '当日激活设备中产生注册的设备数，一个设备注册多次只算一个设备'
-
-        case '当日注册转化率':
-        return '当日异常激活设备数/激活设备总数'
-
-        case '当日订单转化设备数':
-        return '当日激活设备产生成功订单的设备数，一个设备多次下单多次只算一个设备'
-
-        case '当日订单设备转化率':
-        return '当日产生订单转化设备数/当日激活设备数'
-
-        case '当日首单用户数':
-        return '当日激活设备的订单首单去重用户数'        
-
-        case '当日首单用户总订单数':
-        return '当日激活设备的用户订单数量求和'        
-
-        case '当日设备首单平均客单价':
-        return '当日激活设备的首单平均客单价，每个设备首单价格总和/发生首单的设备数'        
-
-        case '当日首单用户订单总销售额':
-        return '当日激活设备中，发生首单的用户订单价格求和'       
-
-        default:
-        return text
-      }      
-
-    },
     renderTable() {
     let formData = new FormData()
     formData.append("datasetId", 178);
@@ -164,10 +113,6 @@ export default {
         }
       }
       )
-      // '当日激活当日注册设备', '当日首单平均客单价', '当日首单订单总销售额'
-      this.headers[this.$_.findIndex(this.headers, e=>e.text == '当日激活当日注册设备')].text = '当日注册设备数'
-      this.headers[this.$_.findIndex(this.headers, e=>e.text == '当日首单平均客单价')].text = '当日设备首单平均客单价'
-      this.headers[this.$_.findIndex(this.headers, e=>e.text == '当日首单订单总销售额')].text = '当日首单用户订单总销售额'      
       this.desserts = this.getData.data.map((e,i) => {
         let content = {}
         e.forEach((item, indx) => {
