@@ -1,12 +1,10 @@
-# demo vuetify
-
-# vue-dev base
+# vue-dev
 
 > A Vue.js project
 
 ## Build Setup
 
-```bash
+``` bash
 # install dependencies
 npm install
 
