@@ -1,6 +1,6 @@
 # demo vuetify
 
-# copy by franxx
+# copy for practise
 
 # vue-dev base
 
