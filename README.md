@@ -1,8 +1,4 @@
-# demo vuetify
-
-# copy for practise
-
-# vue-dev base
+# vue-dev
 
 > A Vue.js project
 
